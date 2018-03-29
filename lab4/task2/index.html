@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 2</title>
+    <style>
+        #button {
+            position: relative;
+            left: 1px;
+            height: 50px;
+            width: 100px;
+            background: lightblue;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="button">Click me</button>
+
+    <script>
+        var x = 0;
+        document.getElementById('button').addEventListener("mousemove", function(ev) {
+            var mouseX = ev.pageX - this.offsetLeft; 
+            var mouseY = ev.pageY - this.offsetTop; 
+            if (mouseX > 50) x -= 20;
+            if (mouseX <= 50) x += 20;
+            ev.target.style.left = x + 'px';
+        });
+    </script>
+</body>
+</html>
